@@ -1,0 +1,8 @@
+folderName="Monitoring jobs" // change value for the full name of the folder you want to disable all jobs in
+
+Jenkins.instance.getItemByFullName(folderName).allJobs
+	.findAll { it instanceof AbstractProject }
+	.each {
+      it.disable()
+      println("Disabled job: [$it.fullName]")
+  }
