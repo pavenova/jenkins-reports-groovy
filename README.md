@@ -18,3 +18,4 @@ Scripts should be used in jenkins script console
 - V2- Jenkins builds stats.groovy- print stats about the builds in the given period
 - V2- Jenkins folders stats.groovy- print stats about the folders in the given period
 - V2- billing, getUsers by folder and pattern.groovy- will print folders, where are admin users with "external" in the name
+- GetAdminPerFolder.groovy- based on the folder name, will printout the mailling lsit users with admin permissions
