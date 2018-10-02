@@ -16,7 +16,7 @@ for(jobRoot in Jenkins.instance.getAllItems()) {
     
   }
   
-  println jobRoot.fullName +";"+count
+  println jobRoot.fullName + ";" + buildCount
 
 }
 	
