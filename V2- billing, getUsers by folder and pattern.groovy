@@ -29,7 +29,7 @@ for (item in Jenkins.instance.allItems) {
 			           		User usr = User.getById(it,false)
 				            //println usr.fullName
 					   	 	
-							   if(usr != null && usr.fullName.contains("external")) {
+							   if(usr != null) {
 								   def usrMail = usr.getProperty(hudson.tasks.Mailer.UserProperty.class).getAddress();
 								   adminUserList.add(it + ";" + usr.fullName +";" + usrMail)
    							   }
