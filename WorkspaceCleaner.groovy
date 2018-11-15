@@ -1,12 +1,23 @@
-//delete content from workspace folder of disabled jobs
-
 def jobs = Jenkins.instance.getAllItems(Job.class)
 
+
 for(job in jobs) {
+  
+  if(job instanceof hudson.model.ExternalJob){
+    continue
+  }
+  
  if(job.disabled){
    
    String workspace = null
    println "found disabled job: " + job.fullName
+   
+   //pipelines dont have workspace
+   if(job instanceof org.jenkinsci.plugins.workflow.job.WorkflowJob){
+     continue
+   }
+   
+   workspace = job.workspace
    
    try{
      workspace = job.workspace
